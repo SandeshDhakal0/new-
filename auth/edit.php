@@ -15,9 +15,28 @@
                 <h4 class="text-center">Register User</h4>
                 <hr> 
 
+                <?php
+                     require_once "conn.php";
+                     if(isset($_GET,$_GET['id']) && !empty($_GET['id'])){
+                        $id = (int)$_GET['id'];
+                        $sql = "SELECT * FROM users WHERE id = $id";
+                        $query = mysqli_query($conn, $sql);
+                        if($query){
+                            $user_info = mysqli_fetch_assoc($query);
+                        } else {
+                            //notify
+                            header("location: list.php");
+                            exit;
+                        } else {
+                            //
+                            header("location: list.php");
+                            exit;
+                     }
+                ?>
+
                 <!--Form Begins -->
-                <form class="form" action="register.php?id=123" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="234">    
+                <form class="form" action="update.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="user_id" value='<?php echo $user_info['id']?>'>    
                 <div class="form-group row mb-3">
                         <label for="" class="col-sm-12 col-md-3">Name: </label>
                         <div class="col-sm-12 col-md-9">
