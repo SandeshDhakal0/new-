@@ -14,11 +14,11 @@ if(!$conn) {
 die("Error establishing db connection.");
 }
 
-$user_name = "User Name"; 
+$user_name = "hanuman"; 
 
 $sql = "INSERT INTO users (name, email, password, gender, address, date_of_birth, about)
 VALUES
-('$user_name', 'useremaill@gmail.com', 'userpassword', 'Male', 'Other', '2000-01-01', 'This is about')";
+('$user_name', 'hanumna@gmail.com', 'userpassword', 'Male', 'Other', '2000-01-01', 'This is about')";
 // echo $sql;
 $query = mysqli_query($conn, $sql);
 if ($query) {

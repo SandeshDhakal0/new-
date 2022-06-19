@@ -99,9 +99,9 @@ if(!empty($_POST)){
     }
 
     //store data in db
-    // echo "<pre>";
-    // print_r($_FILES);
-    // echo "<pre>";
+    echo "<pre>";
+    print_r($_FILES);
+    echo "<pre>";
 
 } else {
     //direct access
