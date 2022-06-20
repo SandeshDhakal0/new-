@@ -44,10 +44,10 @@ if(!empty($_POST)){
             echo "File size should be less than 3mb";
         }
 
-    } else {
+        } else {
         //file has error
         echo "File contains error.";
-    }
+        }
 
     $full_name = $_POST['name'];
     $gender = $_POST['gender'];
@@ -67,13 +67,13 @@ if(!empty($_POST)){
             "; 
 
     if(isset($name)){
-        $sql .= ", image = '$name'";
+        $sql .= " , image = '$name'";
     }
     
     $sql .= "WHERE id = $user_id";
 
-    echo $sql;
-    exit;
+    // echo $sql;
+    // exit;
 
     $query = mysqli_query($conn, $sql);
 
@@ -88,12 +88,12 @@ if(!empty($_POST)){
     // print_r($_FILES);
     // echo "<pre>";
 
-} else {
+    } else {
     //direct access
     //set message
 
     header("location: ./");
     exit;
-}
-ob_flush();
-//
+    }
+    ob_flush();
+    //

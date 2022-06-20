@@ -21,7 +21,7 @@ if(!empty($_POST)){
         //message set
         header('location: ./');
         exit;
-    }
+    }}
         //text@text
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);        //text, false
     //gmail, yahoo, working email
@@ -80,7 +80,7 @@ if(!empty($_POST)){
             name = '$full_name',
             email = '$email',
             password = '$password',
-            gender = '$gender',
+            gender = ".$_POST['$gender'].",
             address = '$address',
             date_of_birth = '$date_of_birth',
             about = '$about',
@@ -93,22 +93,29 @@ if(!empty($_POST)){
     $query = mysqli_query($conn, $sql);
 
     if($query){
-        echo "Data inserted successfully.";
+        //echo "Data inserted successfully.";
+        //message
+        header("location: ./list.php");
+        exit();
+
     } else {
-        echo "Error: ".mysqli_error($conn);
+        //echo "Error: ".mysqli_error($conn);
+        //error message
+        header("location: ./");
+        exit;
     }
 
     //store data in db
-    echo "<pre>";
-    print_r($_FILES);
-    echo "<pre>";
+    // echo "<pre>";
+    // print_r($_FILES);
+    // echo "<pre>";
 
-} else {
-    //direct access
-    //set message
+// } else {
+//     //direct access
+//     //set message
 
-    header("location: ./");
-    exit;
-}
+//     header("location: ./");
+//     exit;
+// }
 ob_flush();
 //

@@ -27,8 +27,9 @@
                     <th>S.N.</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Phone</th>
+                    <th>Gender</th>
                     <th>Address</th>
+                    <th>Action</th>
                 </thead>
                 <tbody>
                     <?php
@@ -41,7 +42,7 @@
                    }
 
                     foreach($user_lists as $i => $value){
-                    ?>
+                        ?>
                     <tr>
                         <td><?php echo $i+1;?></td>
                         <td><?php echo $value['name'];?></td>

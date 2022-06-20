@@ -25,7 +25,7 @@
                             $user_info = mysqli_fetch_assoc($query);
                         } else {
                             //notify
-                            header("location: list.php");
+                            header('location: list.php');
                             exit;
                         }
                         } else {

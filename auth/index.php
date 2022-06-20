@@ -16,8 +16,7 @@
                 <hr>
 
                 <!--Form Begins -->
-                <form class="form" action="register.php" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id">    
+                <form class="form" action="register.php" method="post" enctype="multipart/form-data">  
                 <div class="form-group row mb-3">
                         <label for="" class="col-sm-12 col-md-3">Name: </label>
                         <div class="col-sm-12 col-md-9">
