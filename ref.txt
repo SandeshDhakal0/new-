@@ -11,3 +11,49 @@ $_SESSION
     Associative Array datatype
     
 
+Git
+    Version controlling tool
+    Install git in our machine 
+     
+git works in a tree structure
+Main trunk
+    branch
+        branch
+            branch 
+
+
+Services 
+    Git Service
+
+Local Machine
+    Laptop
+Repository
+    gitlab
+    github
+    bitbucket
+    self hosted
+
+Check the version og github:
+git --version           => returns the version of the git 
+
+Project initialization
+    To initialization git in a folder:
+        -get init
+
+How to add remote: 
+    - git remote add origin <url>
+
+To push/pull you need to stage the changes
+    - git add.
+    - git commit -m "Write your message"
+    - git status (to check the status of the files)
+    - git push origin branch_name 
+    - git push origin master
+    - git branch  (to check the current branch)
+
+To create a new branch from existing branch:
+    - git checkout -b new_branch_name
+
+To checkout to the existing branch:
+    - git checkout branch_name 
+
