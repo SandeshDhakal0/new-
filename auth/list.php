@@ -21,9 +21,11 @@
     </div>
     <hr>
     <?php
-        //
+        // flash message
         if(isset($_SESSION['error'])){  
             echo "<p class='text-danger'>".$_SESSION['error']."</p>";
+            unset($_SESSION['error']);
+            // session_destroy();
         }
     ?>
 

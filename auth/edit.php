@@ -34,11 +34,13 @@
                             $user_info = mysqli_fetch_assoc($query);
                         } else {
                             //notify
+                            $_SESSION['error'] = "User does not exist.";
                             header('location: list.php');
                             exit;
                         }
                         } else {
-                            //
+                            // notify
+                            $_SESSION['error'] = "Unauthorized access.";
                             header("location: list.php");
                             exit;
                      }

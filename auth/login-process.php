@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "conn.php";
 
 if(isset($_POST) && !empty($_POST)){
@@ -19,6 +20,9 @@ if(isset($_POST) && !empty($_POST)){
     $user_info = mysqli_fetch_assoc($query);
     if(password_verify($_POST['password'], $user_info['password'])){
         //correct
+        //
+        $_SESSION['user_id'] = $user_info['id'];
+        $_SESSION['name'] = $user_info['name'];
         header("location: dashboard.php");
         exit;
     } else {
