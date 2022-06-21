@@ -79,9 +79,12 @@ if(!empty($_POST)){
     $query = mysqli_query($conn, $sql);
 
     if($query){
-        echo "Data inserted successfully.";
+        // echo "Data inserted successfully.";
+        header("location: ./list.php");
+        exit; 
     } else {
-        echo "Error: ".mysqli_error($conn);
+        header("location: ./");
+        exit;
     }
 
     //store data in db
