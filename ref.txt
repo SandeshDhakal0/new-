@@ -1,0 +1,13 @@
+$_SESSION 
+    server side data
+    for a specific period of time
+    can store any datatype
+    size is large (8mb default)
+    $_SESSION
+    Volatile
+    session_start();   => to initilize the session
+    unset();
+    session_destroy();
+    Associative Array datatype
+    
+

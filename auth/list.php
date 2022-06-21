@@ -1,4 +1,5 @@
 <?php
+     session_start();
      require_once "conn.php";
      ?>
 <!DOCTYPE html>
@@ -19,6 +20,12 @@
         </div>
     </div>
     <hr>
+    <?php
+        //
+        if(isset($_SESSION['error'])){  
+            echo "<p class='text-danger'>".$_SESSION['error']."</p>";
+        }
+    ?>
 
     <div class="row">
         <div class="col-12">

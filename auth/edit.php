@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +22,12 @@
                      require_once "conn.php";
                      if(isset($_GET,$_GET['id']) && !empty($_GET['id'])){
                         $id = (int)$_GET['id'];
+                        if($id <=  0){
+                            //invalid id
+                            $_SESSION['error'] = "Invalid ID specification.";
+                            header("location: list.php");
+                            exit();
+                        }
                         $sql = "SELECT * FROM users WHERE id = $id";
                         $query = mysqli_query($conn, $sql);
                         if($query){
