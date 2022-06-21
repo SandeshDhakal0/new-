@@ -19,8 +19,8 @@ require_once "conn.php";
         header("location: list.php");
         exit;
         
-    } else {
+        } else {
         // no id
         header("location: list.php");
         exit;
-    }
+        }

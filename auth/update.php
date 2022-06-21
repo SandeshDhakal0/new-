@@ -40,15 +40,16 @@ if(!empty($_POST)){
             } else {
                 echo "File format is not supported.";
             }
-        } else {
+            }else {
             echo "File size should be less than 3mb";
-        }
-
-        } else {
-        //file has error
-        echo "File contains error.";
-        }
-
+            }
+            }else {
+            //file has error
+            echo "File contains error.";
+            }
+        
+   
+    
     $full_name = $_POST['name'];
     $gender = $_POST['gender'];
     $address = $_POST['address'];

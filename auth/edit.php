@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row mt-5">
             <div class="offset-2 col-8">
-                <h4 class="text-center">Register User</h4>
+                <h4 class="text-center">Update User</h4>
                 <hr> 
 
                 <?php

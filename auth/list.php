@@ -33,7 +33,7 @@
                 </thead>
                 <tbody>
                     <?php
-                   $sql = "SELECT * FROM user ORDER BY id DESC";
+                   $sql = "SELECT * FROM users ORDER BY id DESC";
                    $query = mysqli_query($conn, $sql);
 
                    if(mysqli_num_rows($query) > 0){
@@ -47,13 +47,13 @@
                         <td><?php echo $i+1;?></td>
                         <td><?php echo $value['name'];?></td>
                         <td><?php echo $value['email'];?></td>
-                        <td><?php echo $value['phone'];?></td>
+                        <td><?php echo $value['gender'];?></td>
                         <td><?php echo $value['address'];?></td>
                         <td>
                             <a href="delete.php?id=<?php echo $value['id']?>">
                                 Delete
                             </a>
-                        $nbsp;$nbsp;$nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="edit.php?id=<?php echo $value['id']?>">
                                 Edit
                             </a>
