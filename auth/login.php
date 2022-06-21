@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +17,12 @@
             <div class="offset-2 col-8">
                 <h4 class="text-center">Login</h4>
                 <hr>
-
+                <?php
+                    if(isset($_SESSION['error'])){
+                        echo "<p class='text-danger'>".$_SESSION['error']."</p>";
+                        unset($_SESSION['error']);
+                    }
+                ?>
                 <!--Form Begins -->
                 <form class ="form" action="login-process.php" method = "post">
                     <div class="form-group row mb-3">
