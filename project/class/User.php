@@ -4,6 +4,5 @@
         {
             parent::__construct();
             //db operation
-            this->table = "users";
         }
     }
