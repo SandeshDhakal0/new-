@@ -1,5 +1,5 @@
 <?php
-    class Database{
+    abstract class Database{
         protected $table = null;
         
         function __construct(){

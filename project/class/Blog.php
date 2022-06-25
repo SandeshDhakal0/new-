@@ -1,5 +1,5 @@
 <?php
-    class Blog extends Database{
+    final class Blog extends Database{
         function __construct()
         {
             parent::__construct();

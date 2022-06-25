@@ -24,4 +24,11 @@
             echo "This is from child class.<br>";
         }
     }
+
+    class UserClass {
+        function __construct(){
+            $this->obj1 = new Person();
+            $this->obj2 = new User();
+        }
+    }
     $user = new User();
