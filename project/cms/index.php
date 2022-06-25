@@ -1,4 +1,8 @@
-<?php require_once "includes/header.php";?>
+<?php require_once "includes/header.php";
+       require_once "../class/Database.php";
+       $user = new Database();
+       $user_obj = $user->getUserByEmail($email);
+?>
 
     <div class="container">
 
