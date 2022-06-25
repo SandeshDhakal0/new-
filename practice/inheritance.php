@@ -1,4 +1,6 @@
 <?php
+//multiple, multi-level, hybrid
+//a,b,c =>d
     class Person{
         function __construct(){
             echo "I am constructor of person.<br>";
