@@ -3,7 +3,7 @@
     $conn = new PDO("mysql:host=localhost;dbname=php_brodway;","root","");
     //error==> exception
     //insert
-    $year = "078";
+    // $year = "078";
     $name = "Hehehe";
     $email = "heheh@gmail.com";
     $gender = "Male";
@@ -27,7 +27,7 @@
     //         ";
 
     $sql = "INSERT INTO users SET
-        year = :year,
+        -- year = :year,
         name = :name,
         email = :email,
         password = :password,
@@ -47,7 +47,7 @@
         exit;
     }
 //This is data binding
-    $stmt->bindValue(":year", $year, PDO::PARAM_STR);
+    // $stmt->bindValue(":year", $year, PDO::PARAM_STR);
     $stmt->bindValue(":name", $name, PDO::PARAM_STR);
     $stmt->bindValue(":email", $email, PDO::PARAM_STR);
     $stmt->bindValue(":password", $password, PDO::PARAM_STR);
