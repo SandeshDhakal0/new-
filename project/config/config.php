@@ -11,5 +11,14 @@
     //personal/project
 
     define("ERROR_LOG", $_SERVER['DOCUMENT_ROOT']."/project/error/error.log");
+
+    define("CLASS_PATH", $_SERVER['DOCUMENT_ROOT'].'/project/class');
     
+    //autload of the class file
+    spl_autoload_register(function($class_name){
+        //User
+        //..../class/User
+        // echo $class_name;
+        require_once CLASS_PATH.'/'.$class_name.".php";
+    });
 
