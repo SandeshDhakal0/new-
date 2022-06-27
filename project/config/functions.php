@@ -1,7 +1,7 @@
 <?php
     //functions that are not connected to database
     function setSession($key, $data){
-        is(!isset($_SESSION)){
+        if(!isset($_SESSION)){
             session_start();
         }
         $_SESSION[$key] = $data;
