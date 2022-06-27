@@ -14,3 +14,9 @@
         header("location: ".$path);
         exit;
     }
+    function flash(){
+        if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
+            echo $_SESSION['error'];
+            unset($_SESSION['error']);
+        }
+    }

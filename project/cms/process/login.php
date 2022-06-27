@@ -6,7 +6,5 @@
         //form data is received
     }else{
         //invalid access
-        $_SESSION['error'] = "Invalid access";
-        header("location: ../");
-        exit;
+        redirect("../","error",'Invalid access')
     }
