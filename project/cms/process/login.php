@@ -6,5 +6,5 @@
         //form data is received
     }else{
         //invalid access
-        redirect("../","error",'Invalid access')
+        redirect("../","error",'Invalid access');
     }
