@@ -9,12 +9,12 @@
 
     //htdocs/project/error/error.log
     //personal/project
-    define("PROJECT_DIR", $_SERVER['DOCUMENT_ROOT'].'/project');
-    define("ERROR_LOG", $_SERVER['DOCUMENT_ROOT'].'/project/error/error.log');
+    define("PROJECT_DIR", $_SERVER['DOCUMENT_ROOT'].'/php/project');
+    define("ERROR_LOG", $_SERVER['DOCUMENT_ROOT'].'/php/project/error/error.log');
 
-    define("CLASS_PATH", $_SERVER['DOCUMENT_ROOT'].'/project/class');
+    define("CLASS_PATH", $_SERVER['DOCUMENT_ROOT'].'/php/project/class');
 
-    require_once($_SERVER['DOCUMENT_ROOT'].'/project/config/functions.php');
+    require_once($_SERVER['DOCUMENT_ROOT'].'/php/project/config/functions.php');
     
     //autload of the class file
     spl_autoload_register(function($class_name){ //callback or callable-> function($class_name)
