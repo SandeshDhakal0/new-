@@ -5,7 +5,7 @@
     define("DB_HOST", 'localhost');
     define("DB_USER", 'root');
     define("DB_PWD", '');
-    define("DB_NAME", 'php_brodway');
+    define("DB_NAME", 'blog_1');
 
     //htdocs/project/error/error.log
     //personal/project
@@ -15,7 +15,7 @@
     define("CLASS_PATH", $_SERVER['DOCUMENT_ROOT'].'/project/class');
     
     //autload of the class file
-    spl_autoload_register(function($class_name){
+    spl_autoload_register(function($class_name){ //callback or callable-> function($class_name)
         //User
         //..../class/User
         // echo $class_name;
