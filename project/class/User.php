@@ -13,6 +13,9 @@
                 'email' => $email
             );
             $this->sql = "SELECT * FROM".$this->table."WHERE email= :email";
-            $this->select($data);
+            $user = $this->select($data);
+            if($user){
+                
+            }
         }
     }

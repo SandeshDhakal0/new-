@@ -13,10 +13,17 @@
 
         //query db
         $user = new User();
-
         $user_info = $user->getUserByEmail($email);
-        //remember me checkbox, radio, select-option
-        //uncheck
+
+        if(!user_info){
+            redirect("../",'error','User not found.');
+        }
+
+        //password verify
+        if(!password_verify($password, $user_info->password)){
+            redirect(",,/",'error','Credentials does not match.');
+        }
+         debug($user_info);
 
     }else{
         //invalid access
