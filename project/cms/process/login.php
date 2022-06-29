@@ -21,7 +21,7 @@
 
         //password verify
         if(!password_verify($password, $user_info->password)){
-            redirect(",,/",'error','Credentials does not match.');
+            redirect(",,/",'error','Credentials does not match.'); 
         }
          debug($user_info);
 
