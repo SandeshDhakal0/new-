@@ -9,5 +9,10 @@
         public function getUserByEmail($email){
             //sql
             //SELECT * FROM users WHERE email = :email;
+            $data = array(
+                'email' => $email
+            );
+            $this->sql = "SELECT * FROM".$this->table."WHERE email= :email";
+            $this->select($data);
         }
     }

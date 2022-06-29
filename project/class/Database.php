@@ -25,5 +25,17 @@
             error_log($msg, 3, ERROR_LOG);
         }
     } 
+    final protected function select($data){
+        try{
+
+        } catch(PDOException $ex){
+            $msg = date("Y-m-d H:i:s").",Select: ".$ex->getMessage()."\n\r";
+            error_log($msg, 3, ERROR_LOG);
+
+        } catch(Exception $ex){
+            $msg = date("Y-m-d H:i:s") . ", Select:" .$ex-getMessage()."\n\r";
+            error_log($msg, 3, ERROR_LOG);
+
+    }
 
 } 
