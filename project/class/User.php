@@ -6,4 +6,8 @@
             $this->table = "users";
             //db operation
         }
+        public function getUserByEmail($email){
+            //sql
+            //SELECT * FROM users WHERE email = :email;
+        }
     }

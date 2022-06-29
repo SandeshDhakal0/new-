@@ -8,9 +8,13 @@
         if($email){
             //invalid email, blank email
             redirect('../','error','Invalid email or empty email');
-        }
+        } 
         $password = $_POST['password']; 
-        // debug($_POST);
+
+        //query db
+        $user = new User();
+
+        $user_info = $user->getUserByEmail($email);
         //remember me checkbox, radio, select-option
         //uncheck
 

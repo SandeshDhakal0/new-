@@ -18,9 +18,6 @@
     
     //autload of the class file
     spl_autoload_register(function($class_name){ //callback or callable-> function($class_name)
-        //User
-        //..../class/User
-        // echo $class_name;
         require_once CLASS_PATH.'/'.$class_name.".php";
     });
 
