@@ -7,6 +7,7 @@
             //blogs
             //"UPDATE blogs SET title = '' WHERE id = $id";
             $this->sql = "UPDATE ". $this->table;"SET ";
+            $temp = array();
             foreach($data as $column_name => $value){
                 $str = $column_name. " = :" . $column_name;
                 $temp[] = $str;
@@ -15,6 +16,10 @@
             $this->sql .= "WHERE id = :id";
 
             $success = $this->update($id,$data);
-
+            if($success){
+                return $id;
+            } else {
+                return false;
+            }
         }
     }

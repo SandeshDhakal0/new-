@@ -59,4 +59,33 @@
 
     }
     }
-}
+
+    final protected function update($id = null, $data = array()){
+        try{
+            $this->stmt = $this->conn->prepare($this->sql);
+            if(!empty($data)){
+                foreach($data as $key => $value){
+                    if(is_int($value)){
+                        $param_type = PDO::PARAM_INT;
+                    } else if(is_bool($value)){
+                        $param_type = PDO::PARAM_BOOL;
+                    }else {
+                        $param_type = PDO::PARAM_STR;
+                    }
+                    $this->stmt->bindValue(":".$key, $value, $param_type);
+                }
+            }
+            if($id){
+                $this->stmt->bindValue(":id",$id, PDO::PARAM_INT);
+            }
+            return $this->stmt->execute();
+            
+        } catch(PDOException $ex){
+            $msg = data("Y-m-d H:i:s"). ",Update: ". $ex->getMessage(). "\n\r";
+            error_log($msg, 3, ERROR_LOG); 
+        } catch(Exception $ex){
+            $msg = data("Y-m-d H:i:s"). ",Update: ". $ex->getMessage(). "\n\r";
+            error_log($msg, 3, ERROR_LOG);
+        }
+    }
+    }

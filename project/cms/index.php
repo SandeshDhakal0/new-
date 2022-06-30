@@ -3,6 +3,9 @@ require_once "../config/config.php";
 if(isset($_SESSION['token']) && !empty($_SESSION['token'])){
     redirect("./dashboard.php", 'success','You are already logged in.');
 }
+if(isset($_COOKIE['_au']) && !empty($_COOKIE['_au'])){
+    redirect("./dashboard.php", 'success','Welcome back to admin.');
+}
 require_once "includes/header.php";
 // echo password_hash("admin123" ,PASSWORD_BCRYPT);
 // exit;

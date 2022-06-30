@@ -22,4 +22,21 @@
                 return null;
             }
         }
+
+        public function getUserByToken($token){
+            //sql
+            //SELECT * FROM users WHERE email = :email;
+            $data = array(
+                'remember_token' => $token
+            );
+    
+            $this->sql = "SELECT * FROM ".$this->table."WHERE remember_token= :remember_token";
+            //User is set in array
+            $user = $this->select($data);
+            if($user){
+                return $user[0];
+            } else {
+                return null;
+            }
+        }
     }

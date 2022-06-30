@@ -37,7 +37,8 @@
             setcookie('_au', $token, time()+8640000,'./');
             //TODO: DB update
             $data = array(
-                'remember_token' => $token
+                'remember_token' => $token,
+                'status' => 'active'
             );
             $user->updatedRowById($user_info->id, $data);
         }
