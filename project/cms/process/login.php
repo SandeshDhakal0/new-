@@ -36,6 +36,10 @@
             //cookie
             setcookie('_au', $token, time()+8640000,'./');
             //TODO: DB update
+            $data = array(
+                'remember_token' => $token
+            );
+            $user->updatedRowById($user_info->id, $data);
         }
         //remember_me, checkbox, radio, select-option
         redirect("../dashboard.php",'success','Welcome to admin panel');
