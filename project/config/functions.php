@@ -24,8 +24,24 @@
         exit;
     }
     function flash(){
+        if(isset($_SESSION['success']) && !empty($_SESSION['success'])){
+            echo "<span class='text-success'>".$_SESSION['success']."</span>";
+            unset($_SESSION['success']);
+        }
         if(isset($_SESSION['error']) && !empty($_SESSION['error'])){
             echo "<span class='text-danger'>".$_SESSION['error']."</span>";
             unset($_SESSION['error']);
         }
+    }
+
+    function generateRandomString($len){
+        $char = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $strlen = strlen($chars);
+
+        $str = '';
+        for($i=0; $i < $len; $i++){
+            $postn = rand(0,$strlen-1);
+            $str .= $char[$postn];
+        }
+        return $str;
     }

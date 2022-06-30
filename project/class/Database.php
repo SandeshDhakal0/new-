@@ -25,8 +25,15 @@
     // To run the select query
     final protected function select($data = array()){
         try{
+            //sql
+            //stmt
+            //bind
+            //execute 
+            //data fetch
+
             $this->stmt = $this->conn->prepare($this->sql);
             if(!empty($data)){
+                // [email] => '']
                 foreach($data as $key => $value){
                     if(is_int($value)){
                         $param_type = PDO::PARAM_INT;

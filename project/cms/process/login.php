@@ -23,7 +23,16 @@
         if(!password_verify($password, $user_info->password)){
             redirect(",,/",'error','Credentials does not match.'); 
         }
-         debug($user_info);
+        setSession('user_id',$user_info->id);
+        setSession('name',$user_info->name);
+        setSession('role',$user_info->role);
+        setSession('email',$user_info->email);
+        setSession('status',$user_info->status);
+
+        $token = generateRandomString(100);
+        setSession('token', $token);
+        //remember_me, checkbox, radio, select-option
+        redirect("../dashboard.php",'success','Welcome to admin panel');
 
     }else{
         //invalid access

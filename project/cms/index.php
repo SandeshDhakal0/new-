@@ -1,5 +1,8 @@
 <?php 
 require_once "../config/config.php";
+if(isset($_SESSION['token']) && !empty($_SESSION['token'])){
+    redirect("./dashboard.php", 'success','You are already logged in.');
+}
 require_once "includes/header.php";
 // echo password_hash("admin123" ,PASSWORD_BCRYPT);
 // exit;
