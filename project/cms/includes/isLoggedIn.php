@@ -23,12 +23,14 @@ $user = new User();
     
             $token = generateRandomString(100);
             setSession('token', $token);
-    
-                setcookie('_au', $token, time()+8640000,'./');
-                $data = array(
-                    'remember_token' => $token,
+    // Jan 1 ------------------------------------------ Jan 10
+                    // Jan 3 ------------------ Jan 10
+            setcookie('_au', $token, time()+8640000,'./');
+            $data = array(
+                'remember_token' => $token,
                     'status' => 'active'
-                );
-                $user->updatedRowById($user_info->id, $data);
-            }
-       }
+            );
+            $user->updatedRowById($user_info->id, $data);
+
+        }
+    }
