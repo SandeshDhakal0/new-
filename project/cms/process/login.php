@@ -5,7 +5,7 @@
     if(isset($_POST) && !empty($_POST)){
         //form data is received
         $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);    //string, false
-        if($email){
+        if(!$email){
             //invalid email, blank email
             redirect('../','error','Invalid email or empty email');
         } 
@@ -21,7 +21,7 @@
 
         //password verify
         if(!password_verify($password, $user_info->password)){
-            redirect(",,/",'error','Credentials does not match.'); 
+            redirect("../",'error','Credentials does not match.'); 
         }
         setSession('user_id',$user_info->id);
         setSession('name',$user_info->name);
@@ -31,6 +31,12 @@
 
         $token = generateRandomString(100);
         setSession('token', $token);
+
+        if(isset($_POST['remember_me']) && $_POST['remember_me'] == 1){
+            //cookie
+            setcookie('_au', $token, time()+8640000,'./');
+            //TODO: DB update
+        }
         //remember_me, checkbox, radio, select-option
         redirect("../dashboard.php",'success','Welcome to admin panel');
 
