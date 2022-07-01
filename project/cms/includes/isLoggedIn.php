@@ -1,6 +1,6 @@
 <?php
 $user = new User();
-    if(!issest($_SESSION) || empty($_SESSION['token'])){
+    if(!isset($_SESSION) || empty($_SESSION['token'])){
        // redirect("./");
        if(isset($_COOKIE, $_COOKIE['_au'])){
             $token = $_COOKIE['_au'];
