@@ -24,7 +24,7 @@
 
 <!-- Nav Item - Slider -->
 <li class="nav-item">
-    <a class="nav-link" href="index.html">
+    <a class="nav-link" href="slider.php">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Slider</span></a>
 </li>
