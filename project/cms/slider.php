@@ -67,6 +67,13 @@ require_once "includes/header.php";
                                        <input type="file" name="image" accept="image/*">
                                     </div>
                                 </div>
+                                <div class="form-group row mb-3">
+                                    <div class="offset-sm-3 col-sm-9">
+                                       <button type="submit" class="btn btn-sm btn-success">
+                                        Create Slider
+                                       </button>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>

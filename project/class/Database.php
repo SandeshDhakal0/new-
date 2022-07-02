@@ -50,7 +50,7 @@
             return $result;
 
         } catch(PDOException $ex){
-            $msg = date("Y-m-d H:i:s"). ",Select: ". $ex->getMessage(). "\n\r";
+            $msg = date("Y-m-d H:i:s"). ", Select: " . $ex->getMessage(). "\n\r";
             error_log($msg, 3, ERROR_LOG);
 
         } catch(Exception $ex){

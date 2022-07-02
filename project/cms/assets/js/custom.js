@@ -62,10 +62,13 @@ setInterval(showClock, 1000)
 
 $(document).on('click', '#slider-add', function(e){
     $('#slider_table').slideToggle();
-    $('#slider_form').toogleClass('d-none');
+    $('#slider_form').toggleClass('d-none');
     $('#showForm').toggleHtml('Show Table')
 });
 
+//ajax
+//asynchronous javascript and xml
+//get, post, ajax
 
 
 //document.getElementById('slider_content').innerHTML = html_var;
