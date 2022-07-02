@@ -19,7 +19,7 @@ require_once "includes/header.php";
                     <?php flash(); ?>
                     <h1 class="h3 mb-4 text-gray-800">
                         Slider Page
-                        <a href="" onclick="showForm()" class="btn btn-sm btn-success float-right">
+                        <a href="javascript:;" id="slider-add" class="btn btn-sm btn-success float-right">
                             <i clas="fa fa-plus"></i>
                             Add Slider
                         </a>
@@ -38,7 +38,7 @@ require_once "includes/header.php";
                             </table>
                         </div>
                     </div>
-                    
+
                     <div class="row d-none" id="slider_form">
                         <div class="col-12">
                             <form>

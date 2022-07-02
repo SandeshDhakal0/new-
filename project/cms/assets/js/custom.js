@@ -43,17 +43,24 @@ function showClock(){
     if(minute < 10){
         minute = "0"+seconds;
     }
-    document.getElementById('clock').innerHTML = (hour+":"+minute+":"+seconds);
+    $('#clock').html(hour+":"+minute+":"+seconds);    // Both the way is the same 
+    //document.getElementById('clock').innerHTML = (hour+":"+minute+":"+seconds);
 }
 setInterval(showClock, 1000)
+// $, jQuery => Jquery initialization
+//#(selector).event();
+    // selector => is html node element 
+    // selector can be either id, class or tag
+    // if id is used use #
+    //if class is used, use .
+    // if tag is used do not use anything
+//Event is an action that is being trigerred or fired or listened
+// if event is empty, it's trigged or fire
+// if callback is passed as a parameter, its event listening
 
+//JQuery('#slider-add');
+$('#slider-add')
 
-
-// function
-function showForm(){
-    //logic
-        
-}
 
 
 //document.getElementById('slider_content').innerHTML = html_var;
