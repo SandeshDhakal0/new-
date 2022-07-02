@@ -1,3 +1,4 @@
+//Api call
 const json_data = [
 {
     'id':1,
@@ -32,6 +33,13 @@ while(1 < json_data.length){
     i++;
     // loop iterate
 } 
+
+// function
+function showForm(){
+    //logic
+       
+}
+
 
 //document.getElementById('slider_content').innerHTML = html_var;
 

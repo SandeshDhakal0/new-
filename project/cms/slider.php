@@ -17,7 +17,13 @@ require_once "includes/header.php";
                 <div class="container-fluid">
 
                     <?php flash(); ?>
-                    <h1 class="h3 mb-4 text-gray-800">Slider Page</h1>
+                    <h1 class="h3 mb-4 text-gray-800">
+                        Slider Page
+                        <a href="" onclick="showForm()" class="btn btn-sm btn-success float-right">
+                            <i clas="fa fa-plus"></i>
+                            Add Slider
+                        </a>
+                    </h1>
                     <hr>
                     <div class="row">
                         <div class="col-12">
@@ -29,7 +35,7 @@ require_once "includes/header.php";
                                     <th>Image</th>
                                     <th>Action</th>
                                 </thead>
-                                <tbody id="slider-content">
+                                <!-- <tbody id="slider-content">
                                     <tr>
                                         <td>1</td>
                                         <td>Title</td>
@@ -40,7 +46,7 @@ require_once "includes/header.php";
                                             <a href="" class="btn-link">Delete</a>
                                         </td>
                                     </tr>
-                                </tbody>
+                                </tbody> -->
                             </table>
                         </div>
                     </div>
