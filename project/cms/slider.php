@@ -25,7 +25,7 @@ require_once "includes/header.php";
                         </a>
                     </h1>
                     <hr>
-                    <div class="row">
+                    <div class="row" id="slider_table">
                         <div class="col-12">
                             <table class="table table-sm table-bordered table-hover">
                                 <thead class="table-dark">
@@ -35,19 +35,30 @@ require_once "includes/header.php";
                                     <th>Image</th>
                                     <th>Action</th>
                                 </thead>
-                                <!-- <tbody id="slider-content">
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Title</td>
-                                        <td>Active</td>
-                                        <td>No image</td>
-                                        <td>
-                                            <a href="" class="btn-link">Edit</a>
-                                            <a href="" class="btn-link">Delete</a>
-                                        </td>
-                                    </tr>
-                                </tbody> -->
                             </table>
+                        </div>
+                    </div>
+                    
+                    <div class="row d-none" id="slider_form">
+                        <div class="col-12">
+                            <form>
+                                <div class="form-group row mb-3">
+                                    <label for="" class="col-sm-3">Title:</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="Title" required placeholder="Enter Slider title" class="form-control form-control-sm">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-3">
+                                    <label for="" class="col-sm-3">Status:</label>
+                                    <div class="col-sm-9">
+                                        <select name="status" id="status" required class="form-control form-control-sm">
+                                            <option value="active" >Active</option>
+                                            <option value="inactive" >In-Active</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
