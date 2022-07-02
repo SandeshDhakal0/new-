@@ -21,7 +21,7 @@ require_once "includes/header.php";
                         Slider Page
                         <a href="javascript:;" id="slider-add" class="btn btn-sm btn-success float-right">
                             <i clas="fa fa-plus"></i>
-                            Add Slider
+                            <span id="showForm">Add Slider</span>
                         </a>
                     </h1>
                     <hr>
@@ -35,6 +35,9 @@ require_once "includes/header.php";
                                     <th>Image</th>
                                     <th>Action</th>
                                 </thead>
+                                <tbody id="slider_content">
+
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -56,6 +59,12 @@ require_once "includes/header.php";
                                             <option value="inactive" >In-Active</option>
 
                                         </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-3">
+                                    <label for="" class="col-sm-3">Image:</label>
+                                    <div class="col-sm-9">
+                                       <input type="file" name="image" accept="image/*">
                                     </div>
                                 </div>
                             </form>

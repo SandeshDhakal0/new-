@@ -6,20 +6,25 @@
 
             //blogs
             //"UPDATE blogs SET title = '' WHERE id = $id";
-            $this->sql = "UPDATE ". $this->table;"SET ";
+            $this->sql = "UPDATE ". $this->table;" SET ";
             $temp = array();
             foreach($data as $column_name => $value){
-                $str = $column_name. " = :" . $column_name;
+                $str = $column_name . " = :" . $column_name;
                 $temp[] = $str;
             }
-            $this->sql .= implode(",",$temp);
-            $this->sql .= "WHERE id = :id";
+            $this->sql .= implode(",", $temp);
+            $this->sql .= " WHERE id = :id ";
 
-            $success = $this->update($id,$data);
+            $success = $this->update($id, $data);
             if($success){
                 return $id;
             } else {
                 return false;
             }
+        }
+
+        final public function getAllRows(){
+            $this->sql = "SELECT * FROM ".$this->table." ORDER BY id DESC";
+            return $this->select();
         }
     }

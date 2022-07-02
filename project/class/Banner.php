@@ -1,8 +1,9 @@
 <?php
     final class Blog extends Database{
+        use DataTrait; 
         function __construct()
         {
         parent::__construct();
-        $this->table = "banners";
+        $this->table = "sliders";
         }
     }

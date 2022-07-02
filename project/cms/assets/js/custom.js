@@ -59,7 +59,12 @@ setInterval(showClock, 1000)
 // if callback is passed as a parameter, its event listening
 
 //JQuery('#slider-add');
-$('#slider-add')
+
+$(document).on('click', '#slider-add', function(e){
+    $('#slider_table').slideToggle();
+    $('#slider_form').toogleClass('d-none');
+    $('#showForm').toggleHtml('Show Table')
+});
 
 
 
