@@ -5,7 +5,7 @@
 
     //get all sliders
 
-    is(isset($_GET['action']) && !empty($_GET['action']) && $_GET['action'] == 'getAllSliders'){
+    if(isset($_GET['action']) && !empty($_GET['action']) && $_GET['action'] == 'getAllSliders'){
         //fetch all sliders
         $data = $slider->getAllRows();
 
