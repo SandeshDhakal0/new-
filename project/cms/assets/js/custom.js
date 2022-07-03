@@ -70,9 +70,41 @@ $(document).on('click', '#slider-add', function(e){
 //asynchronous javascript and xml
 //get, post, ajax
 
-$.get('process/sliderapi.php?action=getAllSliders', function(res){
-    console.log("Repo: ", res);
-});
+// $.get('process/sliderapi.php?action=getAllSliders', function(res){
+//     console.log("Repo: ", res);
+// });
+
+// $.post("process/sliderapi.php", {action: "getAllSliders"}, function(res){
+
+// });
+
+                // AJAX
+        $.ajax({
+            url: "process/sliderapi.php",
+            type: 'get',
+            data: {
+                action: "getAllSliders"
+            },
+            success: function(res){
+                // code
+                if(typeof(res) != 'object'){
+                    res = JSON.parse(res);      // convert json string to object
+                }
+                if(res.status == 200){
+                    var html_var = '';
+
+                    $.each(res.data, (key, value) => {
+                        html_var += "<tr>";
+                        html_var += "<td>"+(key+1)+"</td>";
+                        html_var += "<td>"+ json_data[i].title +"</td>";
+                        html_var += "<td>"+ json_data[i].status +"</td>";
+                        html_var += "<td><img class='img img-fluid' src='uploads/banner/"+value.image+"'></td>";
+                        html_var += "<td><a href='' class='btn-link'>Edit</a> <a href='' class='btn-link'>Delete</a></td>";
+                        html_var += "</tr>";
+                    });
+                }
+            }
+        })
 
 //document.getElementById('slider_content').innerHTML = html_var;
 
