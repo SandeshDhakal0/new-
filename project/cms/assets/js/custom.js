@@ -70,7 +70,7 @@ $(document).on('click', '#slider-add', function(e){
 //asynchronous javascript and xml
 //get, post, ajax
 
-$.get('process/sliderapi.php?action=getAllSliders', function(res)){
+$.get('process/sliderapi.php?action=getAllSliders', function(res){
     console.log("Repo: ", res);
 });
 
