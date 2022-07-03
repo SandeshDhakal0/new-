@@ -27,4 +27,21 @@
             $this->sql = "SELECT * FROM ".$this->table." ORDER BY id DESC";
             return $this->select();
         }
+
+        final public function insertRow($data){
+            $this->sql = "INSERT INTO ". $this->table." SET ";
+
+            $temp = array();
+            foreach($data as $column_name => $value){
+                $str = $column_name. "= :" . $column_name;
+                $temp[] = $str;
+            }
+            $this->sql .= implode(",", $temp);
+            $id = $this->insert($data);
+            if($id){
+                return $id;
+            } else {
+                return false;
+            }
+        }
     }

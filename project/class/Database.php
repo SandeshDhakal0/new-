@@ -23,69 +23,99 @@
             }
         } 
     // To run the select query
-    final protected function select($data = array()){
-        try{
-            //sql
-            //stmt
-            //bind
-            //execute 
-            //data fetch
+        final protected function select($data = array()){
+            try{
+                //sql
+                //stmt
+                //bind
+                //execute 
+                //data fetch
 
-            $this->stmt = $this->conn->prepare($this->sql);
-            if(!empty($data)){
-                // [email] => '']
-                foreach($data as $key => $value){
-                    if(is_int($value)){
-                        $param_type = PDO::PARAM_INT;
-                    } else if(is_bool($value)){
-                        $param_type = PDO::PARAM_BOOL;
-                    }else {
-                        $param_type = PDO::PARAM_STR;
+                $this->stmt = $this->conn->prepare($this->sql);
+                if(!empty($data)){
+                    // [email] => '']
+                    foreach($data as $key => $value){
+                        if(is_int($value)){
+                            $param_type = PDO::PARAM_INT;
+                        } else if(is_bool($value)){
+                            $param_type = PDO::PARAM_BOOL;
+                        }else {
+                            $param_type = PDO::PARAM_STR;
+                        }
+                        $this->stmt->bindValue(":".$key, $value, $param_type);
                     }
-                    $this->stmt->bindValue(":".$key, $value, $param_type);
                 }
-            }
-            $this->stmt->execute();
-            $result = $this->stmt->fetchAll(PDO::FETCH_OBJ);
-            return $result;
+                $this->stmt->execute();
+                $result = $this->stmt->fetchAll(PDO::FETCH_OBJ);
+                return $result;
 
-        } catch(PDOException $ex){
-            $msg = date("Y-m-d H:i:s"). ", Select: " . $ex->getMessage(). "\n\r";
-            error_log($msg, 3, ERROR_LOG);
+            } catch(PDOException $ex){
+                $msg = date("Y-m-d H:i:s"). ", Select: " . $ex->getMessage(). "\n\r";
+                error_log($msg, 3, ERROR_LOG);
 
-        } catch(Exception $ex){
-            $msg = date("Y-m-d H:i:s") . ", Select:" .$ex-getMessage()."\n\r";
-            error_log($msg, 3, ERROR_LOG);
+            } catch(Exception $ex){
+                $msg = date("Y-m-d H:i:s") . ", Select:" .$ex-getMessage()."\n\r";
+                error_log($msg, 3, ERROR_LOG);
 
-    }
-    }
+        }
+        }
 
-    final protected function update($id = null, $data = array()){
-        try{
-            $this->stmt = $this->conn->prepare($this->sql);
-            if(!empty($data)){
-                foreach($data as $key => $value){
-                    if(is_int($value)){
-                        $param_type = PDO::PARAM_INT;
-                    } else if(is_bool($value)){
-                        $param_type = PDO::PARAM_BOOL;
-                    }else {
-                        $param_type = PDO::PARAM_STR;
+        final protected function update($id = null, $data = array()){
+            try{
+                $this->stmt = $this->conn->prepare($this->sql);
+                if(!empty($data)){
+                    foreach($data as $key => $value){
+                        if(is_int($value)){
+                            $param_type = PDO::PARAM_INT;
+                        } else if(is_bool($value)){
+                            $param_type = PDO::PARAM_BOOL;
+                        }else {
+                            $param_type = PDO::PARAM_STR;
+                        }
+                        $this->stmt->bindValue(":".$key, $value, $param_type);
                     }
-                    $this->stmt->bindValue(":".$key, $value, $param_type);
                 }
+                if($id){
+                    $this->stmt->bindValue(":id",$id, PDO::PARAM_INT);
+                }
+                return $this->stmt->execute();
+                
+            } catch(PDOException $ex){
+                $msg = data("Y-m-d H:i:s"). ",Update: ". $ex->getMessage(). "\n\r";
+                error_log($msg, 3, ERROR_LOG); 
+            } catch(Exception $ex){
+                $msg = data("Y-m-d H:i:s"). ",Update: ". $ex->getMessage(). "\n\r";
+                error_log($msg, 3, ERROR_LOG);
             }
-            if($id){
-                $this->stmt->bindValue(":id",$id, PDO::PARAM_INT);
-            }
-            return $this->stmt->execute();
+        }
+
+        final protected function insert($data = array()){
+            try{
+                $this->stmt = $this->conn->prepare($this->sql);
+                if(!empty($data)){
+                    foreach($data as $key => $value){
+                        if(is_int($value)){
+                            $param_type = PDO::PARAM_INT;
+                        } else if(is_bool($value)){
+                            $param_type = PDO::PARAM_BOOL;
+                        }else {
+                            $param_type = PDO::PARAM_STR;
+                        }
+                        $this->stmt->bindValue(":".$key, $value, $param_type);
+                    }
+                }
             
-        } catch(PDOException $ex){
-            $msg = data("Y-m-d H:i:s"). ",Update: ". $ex->getMessage(). "\n\r";
-            error_log($msg, 3, ERROR_LOG); 
-        } catch(Exception $ex){
-            $msg = data("Y-m-d H:i:s"). ",Update: ". $ex->getMessage(). "\n\r";
-            error_log($msg, 3, ERROR_LOG);
+                $this->stmt->execute();
+                return $this->conn->lastInsertId();
+                
+            } catch(PDOException $ex){
+                $msg = data("Y-m-d H:i:s"). ",Insert: ". $ex->getMessage(). "\n\r";
+                error_log($msg, 3, ERROR_LOG); 
+            } catch(Exception $ex){
+                $msg = data("Y-m-d H:i:s"). ",Insert: ". $ex->getMessage(). "\n\r";
+                error_log($msg, 3, ERROR_LOG);
+            }
         }
     }
-    }
+
+

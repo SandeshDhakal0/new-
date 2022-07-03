@@ -45,3 +45,45 @@
         }
         return $str;
     }
+
+    function sanitize($str){
+        $str = strip_tags($str);
+        $str = rtrim($str);
+
+        return $str;
+    }
+
+    function uploadImage($image, $path){
+        if($image['error'] == 0){
+            if($image['size'] <= 5000000){
+                //
+                $allowed = array('jpg','jpeg','png','svg','gif','webp','bmp');
+
+                $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
+                if(in_array(strtolower($ext), $allowed)){
+                    //
+                    $path = UPLOAD_DIR.'/'.$path;
+                    if(!is_dir($path)){
+                        mkdir($path, 0777, true);
+                    }
+                    $name = date('YmdHis')."-".generateRandomString(40).".".$ext;
+                    $success = move_uploaded_file($image['tmp_name'], $path."/".$name);
+                    if($success){
+                        return name; 
+                    } else {
+                        // error uploading 
+                        return false;
+                    }
+                } else {
+                    // not supported
+                    return false;
+                }
+            } else {
+                // file size
+                return false;
+            }
+        } else {
+            //error in file
+            return false;
+        }
+    }

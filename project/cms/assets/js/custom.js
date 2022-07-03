@@ -1,4 +1,8 @@
+const BASE_URL = "http://localhost/php/project"
+
+
 //Api call
+
 const json_data = [
 {
     'id':1,
@@ -98,7 +102,7 @@ $(document).on('click', '#slider-add', function(e){
                         html_var += "<td>"+(key+1)+"</td>";
                         html_var += "<td>"+ json_data[i].title +"</td>";
                         html_var += "<td>"+ json_data[i].status +"</td>";
-                        html_var += "<td><img class='img img-fluid' src='uploads/banner/"+value.image+"'></td>";
+                        html_var += "<td><img class='img img-fluid' src='"+BASE_URL+"/upload/slider/"+value.image+"' style='max-width:100px'></td>";
                         html_var += "<td><a href='' class='btn-link'>Edit</a> <a href='' class='btn-link'>Delete</a></td>";
                         html_var += "</tr>";
                     });

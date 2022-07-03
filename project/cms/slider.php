@@ -44,7 +44,7 @@ require_once "includes/header.php";
 
                     <div class="row d-none" id="slider_form">
                         <div class="col-12">
-                            <form>
+                            <form method="post" enctype="multipart/form-data" action="process/slider.php">
                                 <div class="form-group row mb-3">
                                     <label for="" class="col-sm-3">Title:</label>
                                     <div class="col-sm-9">
